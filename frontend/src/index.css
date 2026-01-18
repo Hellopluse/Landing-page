@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode - Clean White */
+    --background: 0 0% 100%;
+    --foreground: 210 15% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 25%;
+
+    --primary: 207 77% 77%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 207 30% 96%;
+    --secondary-foreground: 210 15% 25%;
+
+    --muted: 207 20% 96%;
+    --muted-foreground: 210 10% 50%;
+
+    --accent: 207 30% 94%;
+    --accent-foreground: 210 15% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 15% 90%;
+    --input: 210 15% 90%;
+    --ring: 207 77% 77%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens - Blue theme based on #90CAF9 */
+    --brand-blue: 207 77% 77%;
+    --brand-blue-light: 207 80% 95%;
+    --brand-blue-soft: 207 70% 94%;
+    --gray-text: 210 10% 45%;
+    --gray-light: 210 15% 97%;
+
+    /* Social buttons */
+    --google: 4 78% 55%;
+    --facebook: 221 44% 41%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 210 13% 91%;
+    --sidebar-ring: 207 77% 77%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 207 85% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 220 20% 18%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 207 85% 65%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply transition-colors duration-300;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  /* Custom scrollbar styles */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground));
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+@layer components {
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-sidebar-foreground hover:bg-sidebar-accent transition-colors cursor-pointer;
+  }
+
+  .sidebar-item-active {
+    @apply bg-sidebar-accent text-foreground;
+  }
+
+  .action-pill {
+    @apply flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-secondary-foreground hover:bg-accent transition-colors cursor-pointer text-sm font-medium;
+  }
+
+  .input-action-btn {
+    @apply p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors;
+  }
+
+  .dropdown-item {
+    @apply flex items-center gap-3 px-3 py-2.5 hover:bg-accent rounded-lg cursor-pointer transition-colors;
+  }
+}
