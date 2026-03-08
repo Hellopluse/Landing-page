@@ -7,20 +7,31 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setStatus('submitting');
     
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Portfolio Pattern: FormSubmit.co with table template and no captcha
+    const submissionData = {
+      ...data,
+      _subject: `🚀 [Hello Pulse] Nouveau Message de ${data.name}`,
+      _template: 'table',
+      _captcha: 'false'
+    };
     
     try {
-      const response = await fetch('https://formspree.io/f/mqaeoblo', {
+      const response = await fetch('https://formsubmit.co/ajax/hellopulse@gmail.com', {
         method: 'POST',
-        body: formData,
         headers: {
+          'Content-Type': 'application/json',
           'Accept': 'application/json'
-        }
+        },
+        body: JSON.stringify(submissionData)
       });
       
       if (response.ok) {
         setStatus('success');
-        e.currentTarget.reset();
+        form.reset();
       } else {
         setStatus('error');
       }
