@@ -65,9 +65,6 @@ const App: React.FC = () => {
               <a href="#contact" className="bg-brand-blue text-white px-12 py-5 rounded-full font-bold text-xl shadow-xl hover:brightness-105 transition-all transform hover:scale-105">
                 Contactez-nous
               </a>
-              <a href="#demo" className="bg-white text-slate-600 border border-slate-200 px-12 py-5 rounded-full font-bold text-xl shadow-sm hover:bg-slate-50 transition-all">
-                Voir la démo
-              </a>
             </div>
           </div>
         </section>

@@ -42,8 +42,8 @@ const AgentShowcase: React.FC = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {agents.map((agent, idx) => (
-          <div key={idx} className="bg-white border border-slate-100 p-8 rounded-[2rem] hover:shadow-xl transition-all group">
-            <div className="text-5xl mb-6 group-hover:scale-125 transition-transform duration-300">
+          <div key={idx} className="bg-white border border-slate-100 p-8 rounded-[2rem] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-3 transition-all duration-500 group">
+            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-500">
               {agent.emoji}
             </div>
             <div className="text-[10px] font-black text-brand-blue uppercase tracking-widest mb-2">

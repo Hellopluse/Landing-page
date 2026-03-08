@@ -22,9 +22,6 @@ const Hero: React.FC = () => {
             <a href="#contact" className="bg-brand-blue text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:brightness-105 transition-all transform hover:-translate-y-0.5 text-center">
               Contactez-nous
             </a>
-            <a href="#demo" className="bg-white text-slate-600 border border-slate-200 px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition-all text-center">
-              Voir la démo
-            </a>
           </div>
           <div className="mt-10 flex items-center space-x-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
             <div className="flex -space-x-2">

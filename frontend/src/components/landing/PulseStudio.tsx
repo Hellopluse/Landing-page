@@ -69,9 +69,6 @@ const PulseStudio: React.FC = () => {
               <a href="#contact" className="bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:brightness-105 transition-all text-center">
                 Nous contacter
               </a>
-              <a href="#demo" className="bg-transparent border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all text-center">
-                Voir la démo
-              </a>
             </div>
           </div>
 
@@ -106,8 +103,8 @@ const PulseStudio: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {specialists.map((spec, idx) => (
-            <div key={idx} className="group p-8 rounded-[2.5rem] bg-white/5 border border-white/5 hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300 relative overflow-hidden">
-              <div className="w-12 h-12 rounded-2xl bg-slate-800 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-blue/20 group-hover:text-brand-blue transition-all">
+            <div key={idx} className="group p-8 rounded-[2.5rem] bg-white/5 border border-white/5 hover:bg-white/(8) hover:border-brand-blue/40 hover:shadow-[0_0_30px_rgba(144,202,249,0.15)] transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+              <div className="w-12 h-12 rounded-2xl bg-slate-800 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-blue/20 group-hover:text-brand-blue group-hover:shadow-[0_0_15px_rgba(144,202,249,0.3)] transition-all duration-500">
                 <i className={`${spec.icon} text-lg`}></i>
               </div>
               <h3 className="text-lg font-bold mb-1">{spec.role}</h3>
